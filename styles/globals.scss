@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  @apply bg-primary bg-opacity-50;
+}
+
+#alert {
+  transform: translateX(100px);
+  animation: alert-animation 500ms forwards;
+}
+
+@keyframes alert-animation {
+  100% {
+    transform: translateX(0px);
+  }
+}
