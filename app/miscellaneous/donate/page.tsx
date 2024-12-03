@@ -70,7 +70,7 @@ export default function Page() {
             </h1>
 
             <a
-              className="mb-6 w-full btn btn-primary"
+              className="bg-opacity-40 mb-6 w-full btn btn-primary"
               href={donationUrl}
               target="_blank"
             >
