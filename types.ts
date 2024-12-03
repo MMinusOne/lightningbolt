@@ -26,6 +26,19 @@ export interface AlertProps {
   onCancel: () => void;
 }
 
+export interface ThemeOptionsProps {
+  updateTheme: (newTheme: string) => void;
+  theme: string;
+}
+
+export interface UserAvatarProps {
+  user: any;
+}
+
+export interface LinksProps {
+  isMobile: boolean;
+}
+
 export enum LEMONSQUEEZY_WEBHOOK_EVENT {
   ORDER_CREATED = "order_created",
   ORDER_REFUNDED = "order_refunded",

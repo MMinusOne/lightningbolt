@@ -9,6 +9,9 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { useEffect } from "react";
 import Toast from "../misc/Toast";
 import devtoolsRestrictions from "@/utils/devtool-restriction";
+import Head from "next/head";
+import GoogleAdsense from "../misc/GoogleAdsense";
+import { Partytown } from "@builder.io/partytown/react";
 
 export default function MainLayout({
   children,
@@ -26,6 +29,10 @@ export default function MainLayout({
   return (
     <>
       <html lang="en" data-theme={themeStore.theme} className="w-full h-full">
+        <Head>
+          <Partytown debug={true} forward={["dataLayer.push"]} />
+          <GoogleAdsense />
+        </Head>
         <body className="w-full h-full">
           <QueryClientProvider client={queryClient}>
             <ClerkProvider>

@@ -1,6 +1,7 @@
 import crypto from "crypto";
-import prisma from "@/lib/prisma"; // Assuming you have your Prisma client setup
+import prisma from "@/lib/prisma"; 
 import { LEMONSQUEEZY_WEBHOOK_EVENT } from "@/types";
+import { HttpStatusCode } from "axios";
 
 export async function POST(req: Request) {
   try {
@@ -58,6 +59,6 @@ export async function POST(req: Request) {
     return Response.json({ message: "Webhook received" });
   } catch (error) {
     console.log(error);
-    return Response.json({ message: "Server error" }, { status: 500 });
+    return Response.json({ message: "Server error" }, { status: HttpStatusCode.InternalServerError });
   }
 }

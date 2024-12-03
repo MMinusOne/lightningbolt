@@ -8,9 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@builder.io/partytown':
+        specifier: ^0.10.2
+        version: 0.10.2
       '@clerk/nextjs':
         specifier: ^6.5.1
         version: 6.5.1(next@15.0.3(react-dom@19.0.0-rc-66855b96-20241106(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106)(sass@1.81.0))(react-dom@19.0.0-rc-66855b96-20241106(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106)
+      '@clerk/types':
+        specifier: ^4.36.0
+        version: 4.36.0
       '@neondatabase/serverless':
         specifier: ^0.10.4
         version: 0.10.4
@@ -20,12 +26,18 @@ importers:
       '@tanstack/react-query':
         specifier: ^5.62.0
         version: 5.62.0(react@19.0.0-rc-66855b96-20241106)
+      '@types/axios':
+        specifier: ^0.14.4
+        version: 0.14.4
       '@types/figlet':
         specifier: ^1.7.0
         version: 1.7.0
       '@vercel/analytics':
         specifier: ^1.4.1
         version: 1.4.1(next@15.0.3(react-dom@19.0.0-rc-66855b96-20241106(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106)(sass@1.81.0))(react@19.0.0-rc-66855b96-20241106)
+      axios:
+        specifier: ^1.7.8
+        version: 1.7.8
       chalk:
         specifier: ^5.3.0
         version: 5.3.0
@@ -88,6 +100,11 @@ packages:
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
 
+  '@builder.io/partytown@0.10.2':
+    resolution: {integrity: sha512-A9U+4PREWcS+CCYzKGIPovtGB/PBgnH/8oQyCE6Nr9drDJk6cMPpLQIEajpGPmG9tYF7N3FkRvhXm/AS9+0iKg==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+
   '@clerk/backend@1.18.0':
     resolution: {integrity: sha512-FIGBtr8qIgS+NbovKcLOIg8BsQj1JaykW3VKft3H83tONQD5Rg9ENXj/JX1HyZGC3ixLv5BUxu4bihQ78L/gJQ==}
     engines: {node: '>=18.17.0'}
@@ -121,6 +138,10 @@ packages:
 
   '@clerk/types@4.35.0':
     resolution: {integrity: sha512-sBSYCCIXcwI+JHQRqBtskw10+rQ1NcA9w1G6ndnS48F5C+if6xI9OpYaaDjhhvzLjBeZFydKAOhe35mgC7bmoA==}
+    engines: {node: '>=18.17.0'}
+
+  '@clerk/types@4.36.0':
+    resolution: {integrity: sha512-WrwFNJeiToDCCSxzPRbjRnI541lLSyBwtncrGCV4zVr8NhQeEVWlPdbEYzLvQbFu6qYT1ifbE5UR/krHNI79TA==}
     engines: {node: '>=18.17.0'}
 
   '@emnapi/runtime@1.3.1':
@@ -443,6 +464,10 @@ packages:
     peerDependencies:
       react: ^18 || ^19
 
+  '@types/axios@0.14.4':
+    resolution: {integrity: sha512-9JgOaunvQdsQ/qW2OPmE5+hCeUB52lQSolecrFrthct55QekhmXEwT203s20RL+UHtCQc15y3VXpby9E7Kkh/g==}
+    deprecated: This is a stub types definition. axios provides its own type definitions, so you do not need this installed.
+
   '@types/figlet@1.7.0':
     resolution: {integrity: sha512-KwrT7p/8Eo3Op/HBSIwGXOsTZKYiM9NpWRBJ5sVjWP/SmlS+oxxRvJht/FNAtliJvja44N3ul1yATgohnVBV0Q==}
 
@@ -535,8 +560,14 @@ packages:
   async@1.5.2:
     resolution: {integrity: sha512-nSVgobk4rv61R9PUSDtYt7mPVB2olxNR5RWJcAsH676/ef11bUZwvu7+RGYrYauVdDPcO519v68wRhXQtxsV9w==}
 
+  asynckit@0.4.0:
+    resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
+
   aws-sign2@0.5.0:
     resolution: {integrity: sha512-oqUX0DM5j7aPWPCnpWebiyNIj2wiNI87ZxnOMoGv0aE4TGlBy2N+5iWc6dQ/NOKZaBD2W6PVz8jtOGkWzSC5EA==}
+
+  axios@1.7.8:
+    resolution: {integrity: sha512-Uu0wb7KNqK2t5K+YQyVCLM76prD5sRFjKHbJYCP1J7JFGEQ6nN7HWn9+04LAeiJ3ji54lgS/gZCH1oxyrf1SPw==}
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -762,6 +793,15 @@ packages:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
     engines: {node: '>=8'}
 
+  follow-redirects@1.15.9:
+    resolution: {integrity: sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+
   follow@0.12.1:
     resolution: {integrity: sha512-kcE3KjTQk/Od8wItJYIKTuMlkDBh1nemJhY0yqNWQwdn1q/R2McjmapPIvsJp4sXm2EfKWdnZdy7kITKi49QbA==}
     engines: {node: 0.12.x || 0.10.x || 0.8.x}
@@ -781,6 +821,10 @@ packages:
   form-data@1.0.0-rc3:
     resolution: {integrity: sha512-Z5JWXWsFDI8x73Rt/Dc7SK/EvKBzudhqIVBtEhcAhtoevCTqO3YJmctGBLzT0Ggg39xFcefkXt00t1TYLz6D0w==}
     engines: {node: '>= 0.10'}
+
+  form-data@4.0.1:
+    resolution: {integrity: sha512-tzN8e4TX8+kkxGPK8D5u0FNmjPUjw3lwC9lSLxxoB/+GtsJG91CO8bSWy73APlgAZzZbXEYZJuxjkHH2w+Ezhw==}
+    engines: {node: '>= 6'}
 
   formidable@1.0.17:
     resolution: {integrity: sha512-95MFT5qipMvUiesmuvGP1BI4hh5XWCzyTapiNJ/k8JBQda7rPy7UCWYItz2uZEdTgGNy1eInjzlL9Wx1O9fedg==}
@@ -1151,6 +1195,9 @@ packages:
     engines: {node: '>=18.18'}
     hasBin: true
 
+  proxy-from-env@1.1.0:
+    resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
+
   qs@2.3.3:
     resolution: {integrity: sha512-f5M0HQqZWkzU8GELTY8LyMrGkr3bPjKoFtTkwUEqJQbcljbeK8M7mliP9Ia2xoOI6oMerp+QPS7oYJtpGmWe/A==}
 
@@ -1433,6 +1480,8 @@ snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
 
+  '@builder.io/partytown@0.10.2': {}
+
   '@clerk/backend@1.18.0(react-dom@19.0.0-rc-66855b96-20241106(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106)':
     dependencies:
       '@clerk/shared': 2.17.0(react-dom@19.0.0-rc-66855b96-20241106(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106)
@@ -1479,6 +1528,10 @@ snapshots:
       react-dom: 19.0.0-rc-66855b96-20241106(react@19.0.0-rc-66855b96-20241106)
 
   '@clerk/types@4.35.0':
+    dependencies:
+      csstype: 3.1.1
+
+  '@clerk/types@4.36.0':
     dependencies:
       csstype: 3.1.1
 
@@ -1732,6 +1785,12 @@ snapshots:
       '@tanstack/query-core': 5.62.0
       react: 19.0.0-rc-66855b96-20241106
 
+  '@types/axios@0.14.4':
+    dependencies:
+      axios: 1.7.8
+    transitivePeerDependencies:
+      - debug
+
   '@types/figlet@1.7.0': {}
 
   '@types/node@20.17.9':
@@ -1791,7 +1850,17 @@ snapshots:
 
   async@1.5.2: {}
 
+  asynckit@0.4.0: {}
+
   aws-sign2@0.5.0: {}
+
+  axios@1.7.8:
+    dependencies:
+      follow-redirects: 1.15.9
+      form-data: 4.0.1
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
 
   balanced-match@1.0.2: {}
 
@@ -1995,6 +2064,8 @@ snapshots:
     dependencies:
       to-regex-range: 5.0.1
 
+  follow-redirects@1.15.9: {}
+
   follow@0.12.1:
     dependencies:
       browser-request: 0.3.3
@@ -2019,6 +2090,12 @@ snapshots:
   form-data@1.0.0-rc3:
     dependencies:
       async: 1.5.2
+      combined-stream: 1.0.8
+      mime-types: 2.1.35
+
+  form-data@4.0.1:
+    dependencies:
+      asynckit: 0.4.0
       combined-stream: 1.0.8
       mime-types: 2.1.35
 
@@ -2339,6 +2416,8 @@ snapshots:
       '@prisma/engines': 6.0.1
     optionalDependencies:
       fsevents: 2.3.3
+
+  proxy-from-env@1.1.0: {}
 
   qs@2.3.3: {}
 

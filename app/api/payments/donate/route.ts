@@ -1,26 +1,24 @@
 import { lemonSqueezyApiInstance } from "@/lib/axios";
-import { NextApiResponse } from "next";
 import { NextRequest, NextResponse } from "next/server";
+import { HttpStatusCode } from "axios";
 
 export const dynamic = "force-dynamic";
 
-export async function POST(
-  req: NextRequest,
-): Promise<NextResponse> {
+export async function POST(req: NextRequest): Promise<NextResponse> {
   try {
     const reqData = await req.json();
 
     if (!reqData.productId) {
       return NextResponse.json(
         { message: "productId is required" },
-        { status: 400 }
+        { status: HttpStatusCode.BadRequest }
       );
     }
 
     if (!reqData.userId) {
       return NextResponse.json(
         { message: "userId is required" },
-        { status: 400 }
+        { status: HttpStatusCode.BadRequest }
       );
     }
 
@@ -54,6 +52,9 @@ export async function POST(
     return NextResponse.json(response.data);
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ message: "An error occurred" }, { status: 500 });
+    return NextResponse.json(
+      { message: "An error occurred" },
+      { status: HttpStatusCode.InternalServerError }
+    );
   }
 }
