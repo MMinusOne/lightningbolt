@@ -1,6 +1,7 @@
 "use client";
 
 import Header from "@/components/ui/Header";
+import { DONATION_PRODUCT_ID } from "@/constants/lemonsqueezyIds";
 import { useClerk } from "@clerk/nextjs";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
@@ -16,10 +17,9 @@ export default function Page() {
     if (!user && loaded) {
       openSignIn();
     } else if (user) {
-      console.log("hi");
       const fetchDonationUrl = async () => {
         const { data } = await axios.post(`/api/payments/donate`, {
-          productId: "551892",
+          productId: DONATION_PRODUCT_ID,
           userId: user.id || "",
         });
         console.log(data.data.attributes.url);
@@ -37,10 +37,12 @@ export default function Page() {
   useEffect(() => {
     const fetchDonationGoal = async () => {
       try {
-        const { data } = await axios.get("/api/payments/donationGoal", { headers: { 'Cache-Control': 'no-cache' } });
+        const { data } = await axios.get("/api/payments/donationGoal", {
+          headers: { "Cache-Control": "no-cache" },
+        });
         if (data?.donationGoal) {
-          setTotalDonations(parseInt(data.donationGoal.current_amount));
-          setGoalAmount(parseInt(data.donationGoal.target_amount));
+          setTotalDonations(parseInt(data.current_amount));
+          setGoalAmount(parseInt(data.target_amount));
         }
       } catch (error) {
         console.error("Error fetching donation goal:", error);
@@ -53,7 +55,6 @@ export default function Page() {
 
     return () => clearInterval(intervalId);
   }, []);
-
 
   const progressPercentage = (totalDonations / goalAmount) * 100;
 
