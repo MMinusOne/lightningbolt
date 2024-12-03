@@ -23,6 +23,7 @@ export interface AlertStoreState {
 
 export interface AlertProps {
   message: string;
+  onCancel: () => void;
 }
 
 export enum LEMONSQUEEZY_WEBHOOK_EVENT {

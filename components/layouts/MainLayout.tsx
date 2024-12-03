@@ -25,8 +25,8 @@ export default function MainLayout({
 
   return (
     <>
-      <html lang="en" data-theme={themeStore.theme}>
-        <body>
+      <html lang="en" data-theme={themeStore.theme} className="w-full h-full">
+        <body className="w-full h-full">
           <QueryClientProvider client={queryClient}>
             <ClerkProvider>
               {children}

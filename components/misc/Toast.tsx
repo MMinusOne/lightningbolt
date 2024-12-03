@@ -1,7 +1,11 @@
 import { useEffect } from "react";
-import { SuccessAlert, WarningAlert, InfoAlert, ErrorAlert } from "../ui/Alerts";
+import {
+  SuccessAlert,
+  WarningAlert,
+  InfoAlert,
+  ErrorAlert,
+} from "../ui/Alerts";
 import { useAlertStore } from "../state/alertStore";
-import ms from "ms";
 import { ALERT_TIME } from "@/constants/times";
 import { AlertType } from "@/types";
 
@@ -23,20 +27,48 @@ export default function Toast() {
   return (
     <>
       <div className="toast">
-        {alertStore.alerts.map((alert) => {
+        {alertStore.alerts.map((alert, alertIndex) => {
           switch (alert.type) {
             case AlertType.SUCCESS:
               return (
-                <SuccessAlert key={alert.message} message={alert.message} />
+                <SuccessAlert
+                  key={alert.message}
+                  message={alert.message}
+                  onCancel={() => {
+                    alertStore.deleteAlert(alertIndex);
+                  }}
+                />
               );
             case AlertType.WARNING:
               return (
-                <WarningAlert key={alert.message} message={alert.message} />
+                <WarningAlert
+                  key={alert.message}
+                  message={alert.message}
+                  onCancel={() => {
+                    alertStore.deleteAlert(alertIndex);
+                  }}
+                />
               );
             case AlertType.INFO:
-              return <InfoAlert key={alert.message} message={alert.message} />;
+              return (
+                <InfoAlert
+                  key={alert.message}
+                  message={alert.message}
+                  onCancel={() => {
+                    alertStore.deleteAlert(alertIndex);
+                  }}
+                />
+              );
             case AlertType.ERROR:
-              return <ErrorAlert key={alert.message} message={alert.message} />;
+              return (
+                <ErrorAlert
+                  key={alert.message}
+                  message={alert.message}
+                  onCancel={() => {
+                    alertStore.deleteAlert(alertIndex);
+                  }}
+                />
+              );
           }
         })}
       </div>
