@@ -24,3 +24,21 @@ export interface AlertStoreState {
 export interface AlertProps {
   message: string;
 }
+
+export enum LEMONSQUEEZY_WEBHOOK_EVENT {
+  ORDER_CREATED = "order_created",
+  ORDER_REFUNDED = "order_refunded",
+  SUBSCRIPTION_CREATED = "subscription_created",
+  SUBSCRIPTION_UPDATED = "subscription_updated",
+  SUBSCRIPTION_CANCELLED = "subscription_cancelled",
+  SUBSCRIPTION_RESUMED = "subscription_resumed",
+  SUBSCRIPTION_EXPIRED = "subscription_expired",
+  SUBSCRIPTION_PAUSED = "subscription_paused",
+  SUBSCRIPTION_UNPAUSED = "subscription_unpaused",
+  SUBSCRIPTION_PAYMENT_SUCCESS = "subscription_payment_success",
+  SUBSCRIPTION_PAYMENT_FAILED = "subscription_payment_failed",
+  SUBSCRIPTION_PAYMENT_RECOVERED = "subscription_payment_recovered",
+  SUBSCRIPTION_PAYMENT_REFUNDED = "subscription_payment_refunded",
+  LICENSE_KEY_CREATED = "license_key_created",
+  LICENSE_KEY_UPDATED = "license_key_updated",
+}

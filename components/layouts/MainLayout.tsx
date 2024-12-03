@@ -1,13 +1,14 @@
 "use client";
 
 import "@/styles/globals.scss";
-import { Analytics } from "@vercel/analytics/react";
-import { logConsoleMessages } from "@/utils/log";
-import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import Toast from "../misc/Toast";
-import { ClerkProvider } from "@clerk/nextjs";
+import { Analytics } from "@vercel/analytics/react";
 import { useThemeStore } from "../state/themeStore";
+import { logConsoleMessages } from "@/utils/log";
+import { ClerkProvider } from "@clerk/nextjs";
+import { useEffect } from "react";
+import Toast from "../misc/Toast";
+import devtoolsRestrictions from "@/utils/devtool-restriction";
 
 export default function MainLayout({
   children,
@@ -19,6 +20,7 @@ export default function MainLayout({
 
   useEffect(() => {
     logConsoleMessages();
+    devtoolsRestrictions();
   }, []);
 
   return (

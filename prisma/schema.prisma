@@ -1,0 +1,18 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("NEON_DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model DonationGoal {
+  id             Int      @id @default(autoincrement())
+  current_amount Float    @default(0)
+}
+
+model Donors {
+  user_id String @id
+  amount  Float
+}
